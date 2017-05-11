@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*
-Here is the code that determines whether
-a number is positive, zero, or negative.
-Program should return zero
+/**
+ * main - Entry point
+ *
+ * Description - Here is the code that determines whether
+ * a number is positive, zero, or negative.
+ *
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
 	int n;
