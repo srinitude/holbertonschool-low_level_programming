@@ -10,18 +10,17 @@
 
 int main(void)
 {
-	char numbers[] = "0123456789\0";
-	int index = 0;
+	int number = 48;
 
-	while (numbers[index] != '\0')
+	while (number < 58)
 	{
-		putchar(numbers[index]);
-		if (numbers[index] != '9')
+		putchar(number);
+		if (number != 57)
 		{
 			putchar(',');
 			putchar(32);
 		}
-		index++;
+		number++;
 	}
 	putchar('\n');
 	return (0);
