@@ -10,23 +10,24 @@
 
 int main(void)
 {
-	int first_number = 48;
-	int second_number = 48;
+	int first_number = '0';
+	int second_number = '0';
 
-	while (first_number < 58)
+	while (first_number <= '9')
 	{
-		while (second_number < 58)
+		while (second_number <= '9')
 		{
 			putchar(first_number);
 			putchar(second_number);
-			if ((first_number != 57) && (second_number != 57))
+			if ((first_number != '9') || (second_number != '9'))
 			{
 				putchar(',');
-				putchar(32);
+				putchar(' ');
 			}
 			second_number++;
 		}
 		first_number++;
+		second_number = '0';
 	}
 	putchar('\n');
 	return (0);
