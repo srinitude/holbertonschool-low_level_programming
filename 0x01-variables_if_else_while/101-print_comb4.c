@@ -10,49 +10,29 @@
 
 int main(void)
 {
-	int first_number = '0';
-	int second_number = '1';
-	int third_number = '2';
+	int hundreds;
+	int tens;
+	int ones;
 
-	int original_third_start_point = '2';
-
-	int running_second_start_point = '1';
-	int running_third_start_point = '2';
-
-	while (first_number <= '7')
+	for (hundreds = '0'; hundreds <= '7'; hundreds++)
 	{
-		while (second_number <= '8')
+		for (tens = hundreds + 1; tens <= '8'; tens++)
 		{
-			while (third_number <= '9')
+			for (ones = tens + 1; ones <= '9'; ones++)
 			{
-				if ((first_number != second_number) != third_number)
+				if (((hundreds != tens) != ones) && ((hundreds < tens) < ones))
 				{
-					putchar(first_number);
-					putchar(second_number);
-					putchar(third_number);
-					if ((first_number != '7') || (second_number != '8') || (third_number != '9'))
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					putchar(hundreds);
+					putchar(tens);
+					putchar(ones);
 				}
-				if (third_number == '9')
+				if (hundreds != '7' || tens != '8' || ones != '9')
 				{
-					running_third_start_point++;
+					putchar(',');
+					putchar(' ');
 				}
-				third_number++;
 			}
-			if (second_number == '8')
-			{
-				running_second_start_point++;
-			}
-			second_number++;
-			third_number = running_third_start_point;
 		}
-		first_number++;
-		second_number = running_second_start_point;
-		original_third_start_point++;
-		third_number = original_third_start_point;
 	}
 	putchar('\n');
 	return (0);
