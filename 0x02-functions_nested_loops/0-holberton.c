@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char holberton = "Holberton\0";
+	char holberton[] = "Holberton\0";
 	int index = 0;
 	while (holberton[index] != 0)
 	{
