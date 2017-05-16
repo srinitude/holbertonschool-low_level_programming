@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * print_alphabet - Print the lowercase alphabet
  *
- * Return - Always Success (0)
+ * Return - Void
  */
 
 void print_alphabet(void)
