@@ -30,9 +30,12 @@ void times_table(void)
 				_putchar(',');
 				_putchar(' ');
 			}
-			if ((product_tens_place == 0) && (next_product_tens_place == 0) && (second != 9))
+			if ((product_tens_place == 0) && (next_product_tens_place == 0))
 			{
-				_putchar(' ');
+				if (second != 9)
+				{
+					_putchar(' ');
+				}
 			}
 		}
 		_putchar('\n');
