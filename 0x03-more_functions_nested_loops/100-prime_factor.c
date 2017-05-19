@@ -16,7 +16,7 @@ int main(void)
 	{
 		if (largest_factor % idx == 0)
 		{
-			largest_factor = number / idx;
+			largest_factor = largest_factor / idx;
 			continue;
 		}
 	}
