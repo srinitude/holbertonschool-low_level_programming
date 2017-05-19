@@ -10,16 +10,16 @@
 int main(void)
 {
 	long int number = 612852475143;
-	long int factor = 1;
-	long int idx;
+	long int idx, largest_factor;
 
-	for (idx = 2; idx < number; idx++)
+	for (idx = 3; idx < number; idx++)
 	{
-		if ((number % idx == 0) && (idx > factor))
+		if (number % idx == 0)
 		{
-			factor = idx;
+			largest_factor = number / idx;
+			break;
 		}
 	}
-	printf("%li", factor);
+	printf("%li\n", largest_factor);
 	return (0);
 }
