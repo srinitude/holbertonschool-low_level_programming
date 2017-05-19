@@ -12,9 +12,9 @@ int main(void)
 	long int largest_factor = 612852475143;
 	long int idx;
 
-	for (idx = 2; idx < number; idx++)
+	for (idx = 2; idx < largest_factor; idx++)
 	{
-		if (number % idx == 0)
+		if (largest_factor % idx == 0)
 		{
 			largest_factor = number / idx;
 			continue;
