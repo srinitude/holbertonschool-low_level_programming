@@ -25,7 +25,7 @@ void rev_string(char *s)
 	{
 		s--;
 	}
-	
+
 	for (i = 0; i <= mid; i++)
 	{
 		temp = s[i];
