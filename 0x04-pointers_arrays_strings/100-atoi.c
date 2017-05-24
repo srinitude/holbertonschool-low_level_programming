@@ -62,6 +62,6 @@ int _atoi(char *s)
 		places--;
 	}
 	if (negative_signs % 2)
-		return (result);
+		result = -result;
 	return (-result);
 }
