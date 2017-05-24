@@ -13,7 +13,7 @@ int power(int base, int degree)
 {
 	int i;
 	int number = 1;
-	
+
 	for (i = 0; i < degree; i++)
 	{
 		number *= base;
@@ -36,7 +36,7 @@ int _atoi(char *s)
 	int places = 0;
 	int start_of_number = -1;
 	int i, end_of_number;
-	
+
 	for (i = 0; s[i]; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
