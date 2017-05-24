@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * power - Computes exponentiation
@@ -43,7 +42,7 @@ int _atoi(char *s)
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			places++;
-			if (!(s[i] >= '0' && s[i] <= '9'))
+			if (!(s[i + 1] >= '0' && s[i + 1] <= '9'))
 				break;
 			if (start_of_number >= 0)
 				continue;
