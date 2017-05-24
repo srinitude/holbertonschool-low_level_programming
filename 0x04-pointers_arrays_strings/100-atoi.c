@@ -37,7 +37,7 @@ int _atoi(char *s)
 	int start_of_number = -1;
 	int i, end_of_number;
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
