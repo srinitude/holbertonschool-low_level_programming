@@ -23,11 +23,10 @@ char *_strncpy(char *dest, char *src, int n)
 			n--;
 		}
 	}
-	
-	while (i < original_n)
+
+	if (i + 1 < original_n)
 	{
-		i++;
+		dest[i] = '\0';
 	}
-	dest[i] = '\0';
 	return (dest);
 }
