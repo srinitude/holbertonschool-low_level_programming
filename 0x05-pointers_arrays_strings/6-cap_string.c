@@ -19,8 +19,6 @@ char *cap_string(char *s)
 			switch (s[i - 1])
 			{
 			case ' ':
-			case '\t':
-				s[i - 1] = ' ';
 			case '\n':
 			case ',':
 			case ';':
@@ -33,6 +31,10 @@ char *cap_string(char *s)
 			case '{':
 			case '}':
 				s[i] -= 32;
+				break;
+			case '\t':
+				s[i] -= 32;
+				s[i - 1] = ' ';
 				break;
 			default:
 				break;
