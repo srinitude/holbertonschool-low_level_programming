@@ -20,6 +20,7 @@ char *cap_string(char *s)
 			{
 			case ' ':
 			case '\t':
+				s[i - 1] = ' ';
 			case '\n':
 			case ',':
 			case ';':
