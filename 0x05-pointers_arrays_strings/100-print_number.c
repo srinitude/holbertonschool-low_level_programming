@@ -22,6 +22,89 @@ int power(int base, int degree)
 }
 
 /**
+ * print_positive_number - Prints any positive integer
+ * @n: The integer in question
+ *
+ */
+
+void print_positive_number(int n)
+{
+	int possible_places = 9;
+	int orig_n = n;
+	int i, quo, rem;
+
+	for (i = possible_places; i > 0; i--)
+	{
+		quo = n / power(10, i);
+		rem = n % power(10, i);
+
+		if (rem != orig_n)
+		{
+			if (quo >= 0 && quo <= 9)
+			{
+				_putchar('0' + quo);
+				if (i == 1 && (quo >= 0 && quo <= 9))
+				{
+					if (rem >= 0 && rem <= 9)
+						_putchar('0' + rem);
+				}
+			}
+		}
+		else if ((rem == orig_n) && (i == 1))
+		{
+			_putchar('0' + rem);
+		}
+		n = rem;
+	}
+}
+
+/**
+ * print_negative_number - Prints any negative integer
+ * @n: The integer in question
+ *
+ */
+
+void print_negative_number(int n)
+{
+	int possible_places = 9;
+	int orig_n = n;
+	int i, quo, rem;
+	int neg_start = 0;
+
+	for (i = possible_places; i > 0; i--)
+	{
+		quo = n / power(10, i);
+		rem = n % power(10, i);
+
+		if (rem != orig_n)
+		{
+			if (neg_start == 0)
+			{
+				neg_start = i;
+				quo = -quo;
+				rem = -rem;
+			}
+			if (quo >= 0 && quo <= 9)
+			{
+				if (neg_start == i)
+					_putchar('-');
+				_putchar('0' + quo);
+				if (i == 1 && (quo >= 0 && quo <= 9))
+				{
+					if (rem >= 0 && rem <= 9)
+						_putchar('0' + rem);
+				}
+			}
+		}
+		else if ((rem == orig_n) && (i == 1))
+		{
+			_putchar('0' + rem);
+		}
+		n = rem;
+	}
+}
+
+/**
  * print_number - Prints the number
  * @n: The number in question
  *
@@ -29,43 +112,16 @@ int power(int base, int degree)
 
 void print_number(int n)
 {
-	int possible_places = 10;
-	int original_n = n;
-	int i = 0;
-	int quo, rem;
-
 	if (n == 0)
 	{
 		_putchar('0');
-		return;
 	}
-
-	for (i = possible_places; i > 0; i--)
+	else if (n > 0)
 	{
-		quo = n / power(10, i);
-		rem = n % power(10, i);
-
-		if (rem != original_n)
-		{
-			if (quo >= -9 && quo <= -1)
-			{
-				quo = -quo;
-				_putchar('-');
-				_putchar('0' + quo);
-				if (i == 1 && (quo >= 0 && quo <= 9) && (rem >= -9 && rem <= -1))
-				{
-					rem = -rem;
-					_putchar('0' + rem);
-					break;
-				}
-			}
-			if (quo >= 0 && quo <= 9)
-			{
-				_putchar('0' + quo);
-				if (i == 1 && (quo >= 0 && quo <= 9) && (rem >= 0 && rem <= 9))
-					_putchar('0' + rem);
-			}
-		}
-		n = rem;
+		print_positive_number(n);
+	}
+	else
+	{
+		print_negative_number(n);
 	}
 }
