@@ -98,6 +98,7 @@ void print_negative_number(int n)
 		}
 		else if ((rem == orig_n) && (i == 1))
 		{
+			rem = -rem;
 			_putchar('-');
 			_putchar('0' + rem);
 		}
@@ -120,11 +121,6 @@ void print_number(int n)
 	else if (n > 0)
 	{
 		print_positive_number(n);
-	}
-	else if (n == -1)
-	{
-		_putchar('-');
-		_putchar('1');
 	}
 	else
 	{
