@@ -11,7 +11,7 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int assigned = 0;
+	int assign = 0;
 	unsigned int count = 0;
 	int i, j;
 
@@ -22,12 +22,12 @@ unsigned int _strspn(char *s, char *accept)
 			if (s[i] == accept[j])
 			{
 				count++;
-				assigned = 1;
+				assign = 1;
 			}
 		}
-		if (!assigned)
+		if (!assign)
 			return (count);
-		assigned = 0;
+		assign = 0;
 	}
 
 	return (count);
