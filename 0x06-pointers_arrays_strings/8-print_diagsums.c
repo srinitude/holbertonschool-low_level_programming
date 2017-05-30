@@ -26,7 +26,7 @@ void print_diagsums(int *a, int size)
 	int i;
 	int right = 0;
 	int left = 0;
-	
+
 	for (i = 0; i < square(size); i += (size + 1))
 		right += *(a + i);
 	for (i = square(size) - size; i > 0; i -= (size - 1))
