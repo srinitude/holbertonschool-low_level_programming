@@ -34,7 +34,6 @@ char *_strstr(char *haystack, char *needle)
 				matching_chars++;
 				i++;
 			}
-
 			if (needle_length == matching_chars)
 				return (haystack + offset);
 		}
