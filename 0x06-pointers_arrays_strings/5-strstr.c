@@ -16,13 +16,14 @@ char *_strstr(char *haystack, char *needle)
 	int matching_chars = 0;
 	int i, j, offset;
 
+	if (needle[0] == '\0' || haystack[0] == '\0')
+		return (0);
 	for (i = 0; needle[i] != '\0'; i++)
 		needle_length++;
 	for (i = 0; haystack[i] != '\0'; i++)
 		haystack_length++;
 	if (needle_length > haystack_length)
 		return (0);
-
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
 		for (j = 0; needle[j] != '\0'; j++)
@@ -43,6 +44,5 @@ char *_strstr(char *haystack, char *needle)
 				return (haystack + offset);
 		}
 	}
-
 	return (0);
 }
