@@ -12,10 +12,12 @@ int prime_number_calc(int n, int divisor)
 {
 	if (n % divisor == 0)
 		return (n);
-	if (n == 1)
+	if (n == 1 || n == -1)
 		return (n);
 	if (divisor < (n / 2))
 		divisor += 1;
+	if (divisor >= (n / 2))
+		return (0);
 	return (0 + prime_number_calc(n, divisor));
 }
 
@@ -31,7 +33,7 @@ int is_prime_number(int n)
 {
 	int is_not_prime = prime_number_calc(n, 2);
 
-	if (is_not_prime)
+	if (is_not_prime != 0)
 		return (0);
 	return (1);
 }
