@@ -16,11 +16,13 @@ int prime_number_calc(int n, int divisor)
 		return (100);
 	if (n == 1 || n == -1)
 		return (n);
+	if (n < -1)
+		return (n);
 	if (n % divisor == 0)
 		return (n);
 	if (divisor < (n / 2))
 		divisor += 1;
-	if (divisor >= (n / 2))
+	else if (divisor >= (n / 2))
 		return (0);
 	return (0 + prime_number_calc(n, divisor));
 }
