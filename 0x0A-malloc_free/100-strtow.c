@@ -13,10 +13,10 @@ char **strtow(char *str)
 {
 	char **arr;
 	int *wrd_idx;
-	int i, j, k= 0;
-	int len, words, wrd_len = 0;
-	
-	wrd_idx = malloc(sizeof(int *));
+	int i, j = 0, k = 0;
+	int len = 0, words = 0, wrd_len = 0;
+
+	wrd_idx = malloc(1000 * sizeof(int *));
 	if (wrd_idx == NULL)
 		return (NULL);
 	if ((str == NULL) || (*str == '\0'))
