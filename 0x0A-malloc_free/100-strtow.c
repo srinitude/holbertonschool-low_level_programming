@@ -2,6 +2,12 @@
 #include <stdlib.h>
 
 /**
+ * wrdcnt - Word count
+ * @str: The string to get words from
+ * @c: Initialized count to 0
+ */
+
+/**
  * strtow - Splits a string into words
  * @str: The string in question
  *
@@ -16,7 +22,7 @@ char **strtow(char *str)
 	int i, j = 0, k = 0;
 	int len = 0, words = 0, wrd_len = 0;
 
-	wrd_idx = malloc(1000 * sizeof(int *));
+	wrd_idx = malloc(sizeof(*wrd_idx) * 100);
 	if (wrd_idx == NULL)
 		return (NULL);
 	if ((str == NULL) || (*str == '\0'))
