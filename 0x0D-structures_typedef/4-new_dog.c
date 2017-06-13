@@ -13,7 +13,7 @@ char *_strdup(char *str)
 	char *ptr;
 	int i;
 	int len = 0;
-	
+
 	if (str == NULL)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
@@ -52,6 +52,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (owner != NULL)
 		doggie->owner = _strdup(owner);
 	else
+	{
+		free(doggie->name);
 		return (NULL);
+	}
 	return (doggie);
 }
