@@ -28,24 +28,6 @@ char *_strdup(char *str)
 }
 
 /**
- * _strlen - Computes string length
- * @str: The string in question
- *
- * Return: Length of the string
- */
-
-int _strlen(char *str)
-{
-	int i;
-
-	if (str == NULL)
-		return (0);
-	for (i = 0; str[i] != '\0'; i++)
-		;
-	return (++i);
-}
-
-/**
  * new_dog - Creates a new dog on the heap
  * @name: Name of the dog
  * @age: Age of the dog
