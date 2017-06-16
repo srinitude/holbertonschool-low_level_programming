@@ -1,6 +1,8 @@
 #ifndef CALCULATOR
 #define CALCULATOR
 
+#include <stdlib.h>
+
 /**
  * struct op - Operator struct
  *
