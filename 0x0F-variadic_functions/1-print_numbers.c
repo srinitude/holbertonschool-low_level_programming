@@ -10,19 +10,18 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
-	const char *sep;
 	va_list args;
 
-	if (separator == NULL)
-		sep = "";
-	else
-		sep = separator;
 	va_start(args, n);
 	for (i = 0; i < n; i++)
 	{
 		printf("%i", va_arg(args, int));
 		if (i < (n - 1))
-			printf("%s", sep);
+		{
+			if (separator == NULL)
+				continue;
+			printf("%s", separator);
+		}
 		else
 			printf("\n");
 	}
