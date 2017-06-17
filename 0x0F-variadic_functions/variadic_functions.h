@@ -5,16 +5,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-typedef union print_val {
-	char p_char;
-	int p_int;
-	float p_float;
-	char *p_str;
-} print_val;
-
 typedef struct print_format {
 	char *fmt;
-	void (*helper)();
+	void (*helper)(va_list);
 } print_fmt;
 
 int _putchar(char c);

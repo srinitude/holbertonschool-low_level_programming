@@ -56,7 +56,7 @@ void print_string(va_list args)
 
 void print_all(const char * const format, ...)
 {
-	print_fmt formats[] = {
+	print_fmt fmts[] = {
 		{"c", print_char},
 		{"i", print_integer},
 		{"f", print_float},
@@ -71,11 +71,11 @@ void print_all(const char * const format, ...)
 	j = 0;
 	while (format && format[i])
 	{
-		while (formats[j].fmt != NULL)
+		while (fmts[j].fmt != NULL)
 		{
-			if (*(formats[j].fmt) == (format[i]))
+			if (*(fmts[j].fmt) == format[i])
 			{
-				formats[j].helper(args);
+				fmts[j].helper(args);
 				if (format[i + 1] != '\0')
 					printf(", ");
 			}
