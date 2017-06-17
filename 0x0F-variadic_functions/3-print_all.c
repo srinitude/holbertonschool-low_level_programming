@@ -67,7 +67,7 @@ void print_all(const char * const format, ...)
 	};
 	int i, j;
 	va_list args;
-	char *sep = "\0";
+	char *sep = "";
 
 	va_start(args, format);
 	i = 0;
