@@ -1,0 +1,89 @@
+#include "variadic_functions.h"
+
+/**
+ * print_char - Print a character
+ * @args: va_list
+ */
+
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+
+/**
+ * print_integer - Prints in integer
+ * @args: va_list
+ *
+ */
+
+void print_integer(va_list args)
+{
+	printf("%i", va_arg(args, int));
+}
+
+/**
+ * print_float - Print a float
+ * @args: va_list
+ *
+ */
+
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * print_string - Prints a string
+ * @args: va_list
+ *
+ */
+
+void print_string(va_list args)
+{
+	char *ptr = va_arg(args, char *);
+
+	if (ptr == NULL)
+		printf("(nil)");
+	else
+		printf("%s", ptr);
+}
+
+/**
+ * print_all - Print anything
+ * @format: The format to print something
+ *
+ */
+
+void print_all(const char * const format, ...)
+{
+	print_fmt formats[] = {
+		{"c", print_char},
+		{"i", print_integer},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
+	int i, j;
+	va_list args;
+
+	va_start(args, format);
+	i = 0;
+	j = 0;
+	while (format && format[i])
+	{
+		while (formats[j].fmt != NULL)
+		{
+			if (*(formats[j].fmt) == (format[i]))
+			{
+				formats[j].helper(args);
+				if (format[i + 1] != '\0')
+					printf(", ");
+			}
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	printf("\n");
+	va_end(args);
+}
