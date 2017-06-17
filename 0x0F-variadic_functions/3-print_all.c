@@ -74,7 +74,10 @@ void print_all(const char * const format, ...)
 		while (fmts[j].fmt != NULL)
 		{
 			if (*(fmts[j].fmt) == format[i])
+			{
 				fmts[j].helper(args);
+				break;
+			}
 			j++;
 		}
 		j = 0;
