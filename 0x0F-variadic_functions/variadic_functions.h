@@ -5,7 +5,18 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-typedef struct print_format {
+/**
+ * struct print_format - Here's the print format struct
+ * @fmt: The character
+ * @helper: The associated helper
+ *
+ * Description: This struct has a format character for the type
+ * of content that can be printed and the respective helper
+ * to print it
+ *
+ */
+typedef struct print_format
+{
 	char *fmt;
 	void (*helper)(va_list);
 } print_fmt;
