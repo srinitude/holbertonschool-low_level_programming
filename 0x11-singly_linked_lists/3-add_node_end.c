@@ -11,7 +11,7 @@ list_t *traverse_to_tail(list_t **head)
 {
 	size_t i;
 	list_t *tail;
-	
+
 	if (*head == NULL)
 		return (NULL);
 	tail = *head;
