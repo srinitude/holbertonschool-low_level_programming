@@ -11,6 +11,6 @@ Credits: [Mechanoid](http://mechanoid.tumblr.com/post/47047051199)
   * You are allowed to use `printf`
 * [Write a function that returns the number of elements in a linked listint_t list.](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/1-listint_len.c)
   * Prototype: `size_t listint_len(const listint_t *h);`
-* [Write a function that adds a new node at the beginning of a `listint_t` list.]()
+* [Write a function that adds a new node at the beginning of a `listint_t` list.](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/2-add_nodeint.c)
   * Prototype: `listint_t *add_nodeint(listint_t **head, const int n);`
   * Return: the address of the new element, or `NULL` if it failed
