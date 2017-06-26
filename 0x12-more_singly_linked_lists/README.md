@@ -14,6 +14,6 @@ Credits: [Mechanoid](http://mechanoid.tumblr.com/post/47047051199)
 * [Write a function that adds a new node at the beginning of a `listint_t` list.](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/2-add_nodeint.c)
   * Prototype: `listint_t *add_nodeint(listint_t **head, const int n);`
   * Return: the address of the new element, or `NULL` if it failed
-* [Write a function that adds a new node at the end of a `listint_t` list.]()
+* [Write a function that adds a new node at the end of a `listint_t` list.](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/3-add_nodeint_end.c)
   * Prototype: `listint_t *add_nodeint_end(listint_t **head, const int n);`
   * Return: the address of the new element, or `NULL` if it failed
