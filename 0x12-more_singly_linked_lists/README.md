@@ -25,3 +25,7 @@ Credits: [Mechanoid](http://mechanoid.tumblr.com/post/47047051199)
 * [Write a function that deletes the head node of a `listint_t` linked list, and returns the head node's data (n).](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/6-pop_listint.c)
   * Prototype: `int pop_listint(listint_t **head);`
   * If the linked list is empty, return 0.
+* [Write a function that returns the nth node of a `listint_t` linked list.]()
+  * Prototype: `listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);`
+  * where `index` is the index of the node, starting at `0`
+  * If the node does not exist, return `NULL`
