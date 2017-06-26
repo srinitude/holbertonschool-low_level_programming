@@ -19,3 +19,6 @@ Credits: [Mechanoid](http://mechanoid.tumblr.com/post/47047051199)
   * Return: the address of the new element, or `NULL` if it failed
 * [Write a function that frees a `listint_t` list.](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/4-free_listint.c)
   * Prototype: `void free_listint(listint_t *head);`
+* [Write another function that frees a `listint_t` list.]()
+  * Prototype: void `free_listint2(listint_t **head);`
+  * The function sets the `head` to `NULL`
