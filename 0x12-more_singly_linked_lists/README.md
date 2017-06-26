@@ -22,3 +22,6 @@ Credits: [Mechanoid](http://mechanoid.tumblr.com/post/47047051199)
 * [Write another function that frees a `listint_t` list.](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/5-free_listint2.c)
   * Prototype: void `free_listint2(listint_t **head);`
   * The function sets the `head` to `NULL`
+* [Write a function that deletes the head node of a `listint_t` linked list, and returns the head node's data (n).]()
+  * Prototype: `int pop_listint(listint_t **head);`
+  * If the linked list is empty, return 0.
