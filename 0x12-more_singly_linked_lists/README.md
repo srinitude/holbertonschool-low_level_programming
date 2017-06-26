@@ -9,5 +9,5 @@ Credits: [Mechanoid](http://mechanoid.tumblr.com/post/47047051199)
   * Prototype: `size_t print_listint(const listint_t *h);`
   * Return: the number of nodes
   * You are allowed to use `printf`
-* [Write a function that returns the number of elements in a linked listint_t list.]()
+* [Write a function that returns the number of elements in a linked listint_t list.](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/1-listint_len.c)
   * Prototype: `size_t listint_len(const listint_t *h);`
