@@ -32,3 +32,8 @@ Credits: [Mechanoid](http://mechanoid.tumblr.com/post/47047051199)
 * [Write a function that returns the sum of all the data (n) of a listint_t linked list.](https://github.com/srinitude/holbertonschool-low_level_programming/blob/master/0x12-more_singly_linked_lists/8-sum_listint.c)
   * Prototype: `int sum_listint(listint_t *head);`
   * If the list in empty, return `0`
+* [Write a function that inserts a new node at a given position.]()
+  * Prototype: `listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);`
+  * where `idx` is the index of the list where the new node should be added. Index starts at `0`
+  * Returns: the address of the new node, or `NULL` if it failed
+  * If it is not possible to add the new node at index `idx`, do not add the new node and return `NULL`
