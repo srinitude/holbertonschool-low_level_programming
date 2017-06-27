@@ -29,3 +29,6 @@ Credits: [Mechanoid](http://mechanoid.tumblr.com/post/47047051199)
   * Prototype: `listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);`
   * where `index` is the index of the node, starting at `0`
   * If the node does not exist, return `NULL`
+* [Write a function that returns the sum of all the data (n) of a listint_t linked list.]()
+  * Prototype: `int sum_listint(listint_t *head);`
+  * If the list in empty, return `0`
