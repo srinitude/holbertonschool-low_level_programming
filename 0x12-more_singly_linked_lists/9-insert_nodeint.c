@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * traverse_to_index - Traverse to the indicated index
+ * get_node_at_index - Traverse to the indicated index
  * @head: The head of the list
  * @idx: The index to traverse to
  *
@@ -19,16 +19,18 @@ listint_t *get_node_at_index(listint_t **head, unsigned int idx)
 	temp = *head;
 	for (i = 0; i <= idx; i++)
 	{
-		if (temp->next == NULL)
-			return (NULL);
 		if (i < idx)
+		{
+			if (temp->next == NULL)
+				return (NULL);
 			temp = temp->next;
+		}
 	}
 	return (temp);
 }
 
 /**
- * create_node - Create a new node
+ * create_new_node - Create a new node
  * @n: The value to instantiate with
  *
  * Return: Address of the new node or NULL
@@ -59,17 +61,33 @@ listint_t *create_new_node(int n)
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new_node;
-	listint_t *previous_node;
+	listint_t *prev_node;
 	listint_t *next_node;
+	listint_t *current_head;
 
-	current_node = get_node_at_index(head);
-	if (current_node == NULL)
-		return (NULL);
 	new_node = create_new_node(n);
 	if (new_node == NULL)
 		return (NULL);
-	index_node = current_node;
-	new_node->next = current_node;
-	index_node = new_node;
-	return (index_node);
+	if (idx == 0)
+	{
+		if (head == NULL)
+			*head = new_node;
+		else
+		{
+			current_head = *head;
+			new_node->next = current_head;
+			*head = new_node;
+		}
+	}
+	prev_node = get_node_at_index(head, (idx - 1));
+	if (prev_node == NULL)
+	{
+		free(new_node);
+		return (NULL);
+	}
+	next_node = get_node_at_index(head, idx);
+	prev_node->next = new_node;
+	if (next_node)
+		new_node->next = next_node;
+	return (new_node);
 }
