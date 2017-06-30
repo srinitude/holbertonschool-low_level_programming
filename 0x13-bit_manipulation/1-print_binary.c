@@ -1,24 +1,6 @@
 #include "holberton.h"
 
 /**
- * power_of_2 - Computes exponentiation
- * @degree: The degree
- *
- * Return: The result
- *
- */
-
-unsigned int power_of_2(unsigned int degree)
-{
-	unsigned int i;
-	unsigned int result = 1;
-
-	for (i = 0; i < degree; i++)
-		result *= 2;
-	return (result);
-}
-
-/**
  * print_binary - Print binary representation of number
  * @n: The number
  *
@@ -26,30 +8,27 @@ unsigned int power_of_2(unsigned int degree)
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int largest = 0;
-	unsigned int current, i;
+	unsigned int i, start = 0;
+	unsigned long int num_bits, mask, result;
 
-	if (n == 0)
+	num_bits = sizeof(unsigned long int) * 8 - 1;
+	mask = (unsigned long int)1 << num_bits;
+	for (i = 0; i < num_bits; i++)
 	{
-		_putchar('0');
-		return;
-	}
-	for (i = 0; ; i++)
-	{
-		largest = power_of_2(i);
-		if (largest > n)
-			break;
-	}
-	largest = power_of_2(--i);
-	for (i = 0; ; i++)
-	{
-		current = n & largest;
-		if (current > 0)
-			_putchar('1');
-		else
+		if (i == (num_bits - 1))
+			mask = 1;
+		if ((n & mask) > 0)
+			start = 1;
+		result = n & mask;
+		if (start)
+		{
+			if (result > 0)
+				_putchar('1');
+			else
+				_putchar('0');
+		}
+		if ((i == (num_bits - 1)) && (start == 0))
 			_putchar('0');
-		if (largest == 1)
-			break;
-		largest = largest >> 1;
+		mask >>= 1;
 	}
 }
