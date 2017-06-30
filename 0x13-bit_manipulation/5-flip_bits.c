@@ -15,7 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned long int flip_mask, looper;
 
 	flip_mask = n ^ m;
-	num_bits = sizeof(unsigned long int) * 8 - 1;
+	num_bits = sizeof(unsigned long int) * 8;
 	looper = ~0;
 	looper = looper & 1;
 	for (i = 0; i < num_bits; i++)
