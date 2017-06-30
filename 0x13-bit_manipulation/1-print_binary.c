@@ -41,7 +41,7 @@ void print_binary(unsigned long int n)
 			break;
 	}
 	largest = power_of_2(--i);
-	for (i = 0; ;i++)
+	for (i = 0; ; i++)
 	{
 		current = n & largest;
 		if (current == largest)
