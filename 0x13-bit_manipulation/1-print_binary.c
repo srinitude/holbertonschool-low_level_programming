@@ -44,7 +44,7 @@ void print_binary(unsigned long int n)
 	for (i = 0; ; i++)
 	{
 		current = n & largest;
-		if (current == largest)
+		if (current > 0)
 			_putchar('1');
 		else
 			_putchar('0');
