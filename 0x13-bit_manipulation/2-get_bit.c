@@ -29,8 +29,11 @@ unsigned int two_much_power(unsigned int degree)
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int mask, result;
+	unsigned int mask, result, num_bits;
 
+	num_bits = sizeof(unsigned int) * 8;
+	if (index > num_bits)
+		return (-1);
 	mask = two_much_power(index);
 	if (mask > n)
 		return (-1);
