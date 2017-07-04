@@ -51,7 +51,7 @@ int main(int argc, const char *argv[])
 	if (from_fd == -1)
 		error_out(98, STDERR_FILENO, argv[1]);
 	pmsns = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	to_fd = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, pmsns);
+	to_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, pmsns);
 	if (to_fd == -1)
 		error_out(99, STDERR_FILENO, argv[2]);
 	read_len = 1204;
