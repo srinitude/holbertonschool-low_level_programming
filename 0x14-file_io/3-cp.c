@@ -43,13 +43,15 @@ int main(int argc, const char *argv[])
 	int from_fd, to_fd, f_close, t_close;
 	char buffer[1204];
 	ssize_t read_len, write_len;
+	mode_t pmsns;
 
 	if (argc != 3)
 		error_out(97, STDERR_FILENO, NULL);
 	from_fd = open(argv[1], O_RDONLY);
 	if (from_fd == -1)
 		error_out(98, STDERR_FILENO, argv[1]);
-	to_fd = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	pmsns = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	to_fd = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, pmsns);
 	if (to_fd == -1)
 		error_out(99, STDERR_FILENO, argv[2]);
 	read_len = 1204;
