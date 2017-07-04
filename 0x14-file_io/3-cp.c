@@ -55,7 +55,7 @@ int main(int argc, const char *argv[])
 	read_len = 1204;
 	while (read_len == 1204)
 	{
-		read_len = read(from_fd, buffer, 1204);
+		read_len = read(from_fd, buffer, (size_t)1204);
 		if (read_len == -1)
 			error_out(98, STDERR_FILENO, argv[1]);
 		write_len = write(to_fd, buffer, (size_t)read_len);
