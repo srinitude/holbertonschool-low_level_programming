@@ -1,6 +1,6 @@
 *~
 _putchar.c
-main.c
+*main.c
 #*#
 0x08-static_libraries/*.c
 0x08-static_libraries/*.o
