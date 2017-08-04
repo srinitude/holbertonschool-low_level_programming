@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include <string.h>
 
+#define SUCCESS 1
+#define FAILURE -1
+
 /**
  * struct dlistint_s - doubly linked list
  * @n: integer
@@ -29,5 +32,6 @@ void free_dlistint(dlistint_t *head);
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 int sum_dlistint(dlistint_t *head);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 
 #endif /* DOUBLY_LINKED_LISTS */
