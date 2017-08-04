@@ -45,12 +45,12 @@ dlistint_t *get_node_at_index(dlistint_t *head, unsigned int index)
 /**
  * insert_dnodeint_at_index - Insert node at an index
  * @h: Head of the list
- * @index: The index to insert the new node
+ * @idx: The index to insert the new node
  * @n: The data to instantiate the new node with
  *
  * Return: Address of the new node or NULL
  */
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int index, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new_node = NULL, *current = NULL, *previous = NULL;
 
@@ -59,7 +59,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int index, int n)
 	new_node = create_new_node(n, NULL, NULL);
 	if (new_node == NULL)
 		return (NULL);
-	current = get_node_at_index(*h, index);
+	current = get_node_at_index(*h, idx);
 	if (current == NULL)
 		return (NULL);
 	previous = current->prev;
