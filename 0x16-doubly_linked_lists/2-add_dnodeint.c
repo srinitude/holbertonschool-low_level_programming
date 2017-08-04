@@ -10,7 +10,7 @@
  */
 dlistint_t *create_node(int n, dlistint_t *prev, dlistint_t *next)
 {
-	dlistint_t *node;
+	dlistint_t *node = NULL;
 
 	node = malloc(sizeof(dlistint_t));
 	if (node == NULL)
