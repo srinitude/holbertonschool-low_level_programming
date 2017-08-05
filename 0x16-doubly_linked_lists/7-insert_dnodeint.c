@@ -63,8 +63,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	if (*h == NULL)
 	{
-		*h = new_node;
-		return (*h);
+		if (idx == 0)
+		{
+	       		*h = new_node;
+			return (*h);
+		}
+		free(new_node);
+		return (NULL);
 	}
 	current = get_node_at_index(*h, idx);
 	if (current == NULL)
