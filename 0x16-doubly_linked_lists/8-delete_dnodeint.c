@@ -34,6 +34,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *current_node = NULL;
 	dlistint_t *previous_node = NULL, *next_node = NULL;
 
+	if (head == NULL)
+		return (FAILURE);
 	current_node = get_node_at_index(*head, index);
 	if (current_node == NULL)
 		return (FAILURE);
