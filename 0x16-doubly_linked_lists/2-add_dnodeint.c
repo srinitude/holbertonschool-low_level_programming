@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
- * create_node - Creates a new node
+ * instantiate_node - Creates a new node
  * @n: The data to instantiate with
  * @prev: Reference to previous node
  * @next: Reference to next node
  *
  * Return: Address of the new node or NULL
  */
-dlistint_t *create_node(int n, dlistint_t *prev, dlistint_t *next)
+dlistint_t *instantiate_node(int n, dlistint_t *prev, dlistint_t *next)
 {
 	dlistint_t *node = NULL;
 
@@ -35,7 +35,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	if (head == NULL)
 		return (NULL);
-	new_node = create_node(n, NULL, NULL);
+	new_node = instantiate_node(n, NULL, NULL);
 	if (new_node == NULL)
 		return (NULL);
 	if (*head == NULL)
