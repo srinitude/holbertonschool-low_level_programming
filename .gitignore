@@ -4,6 +4,8 @@ _putchar.c
 #*#
 0x08-static_libraries/*.c
 0x08-static_libraries/*.o
+0x17-dynamic_libraries/*.c
+0x17-dynamic_libraries/*.o
 Requiescat
 crackme*
 *palindrome*
