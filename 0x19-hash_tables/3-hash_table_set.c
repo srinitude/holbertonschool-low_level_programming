@@ -37,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node = NULL, *current = NULL, *list = NULL;
 	char *new_value = NULL, *current_value = NULL;
 
-	if (!ht || !key)
+	if (!ht || !key || !value)
 		return (FAILURE);
 	if (!strlen(key))
 		return (FAILURE);
