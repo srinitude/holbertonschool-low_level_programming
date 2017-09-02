@@ -133,7 +133,7 @@ int update_sorted_list(shash_table_t *ht, shash_node_t *node)
 	}
 	while (current)
 	{
-		next = current->next;
+		next = current->snext;
 		ckey = current->key;
 		if (strcmp(key, ckey) < 0)
 		{
@@ -169,6 +169,7 @@ int update_sorted_list(shash_table_t *ht, shash_node_t *node)
 		}
 		current = current->next;
 	}
+	return (FAILURE);
 }
 
 /**
