@@ -200,7 +200,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (!new)
 		return (FAILURE);
 	if (!bucket)
-		bucket = new;
+		ht->array[index] = new;
 	else
 	{
 		updated = update_value_for_key(bucket, new);
