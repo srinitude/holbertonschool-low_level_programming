@@ -171,7 +171,7 @@ int update_sorted_list(shash_table_t *ht, shash_node_t *node)
 			free_node(node);
 			return (SUCCESS);
 		}
-		current = current->next;
+		current = current->snext;
 	}
 	return (FAILURE);
 }
