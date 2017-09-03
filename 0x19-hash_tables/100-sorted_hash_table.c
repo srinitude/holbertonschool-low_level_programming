@@ -300,3 +300,27 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
+
+/**
+ * shash_table_delete - Delete a sorted hash table
+ * @ht: The hash table
+ *
+ * Return: None
+ */
+void shash_table_delete(shash_table_t *ht)
+{
+	shash_node_t *node = NULL, *current = NULL;
+
+	if (!ht)
+		return;
+	node = ht->shead;
+	while (node)
+	{
+		current = node;
+		free_node(current);
+		node->sprev = NULL;
+		node = node->snext;
+	}
+	free(ht->array);
+	free(ht);
+}
