@@ -109,6 +109,7 @@ int update_value_for_key(shash_node_t *bucket, shash_node_t *node)
 			new_value = strdup((char *)node->value);
 			list->value = new_value;
 			free(cval);
+			cval = NULL;
 			return (SUCCESS);
 		}
 		list = list->next;
@@ -169,7 +170,9 @@ int update_sorted_list(shash_table_t *ht, shash_node_t *node)
 			new = strdup(node->value);
 			current->value = new;
 			free(cval);
+			cval = NULL;
 			free_node(node);
+			node = NULL;
 			return (SUCCESS);
 		}
 		current = current->snext;
@@ -319,9 +322,12 @@ void shash_table_delete(shash_table_t *ht)
 	{
 		current = node;
 		free_node(current);
+		current = NULL;
 		node->sprev = NULL;
 		node = node->snext;
 	}
 	free(ht->array);
+	ht->array = NULL;
 	free(ht);
+	ht = NULL;
 }
