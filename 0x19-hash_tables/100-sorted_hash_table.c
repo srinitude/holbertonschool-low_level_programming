@@ -93,12 +93,12 @@ void free_node(shash_node_t *node)
  * @bucket: The bucket to search
  * @node: The node to free if the key matches an existing one
  *
- * Return: Success or failure
+ * Return: The updated node or NULL
  */
 int update_value_for_key(shash_node_t *bucket, shash_node_t *node)
 {
 	shash_node_t *list = NULL;
-	char *key = node->key, *new_value = node->value, *cval = NULL;
+	char *key = node->key, *new_value = NULL, *cval = NULL;
 
 	list = bucket;
 	while (list)
@@ -106,9 +106,9 @@ int update_value_for_key(shash_node_t *bucket, shash_node_t *node)
 		if (strcmp(key, list->key) == 0)
 		{
 			cval = list->value;
+			new_value = strdup((char *)node->value);
 			list->value = new_value;
 			free(cval);
-			free_node(node);
 			return (SUCCESS);
 		}
 		list = list->next;
@@ -126,8 +126,8 @@ int update_value_for_key(shash_node_t *bucket, shash_node_t *node)
 int update_sorted_list(shash_table_t *ht, shash_node_t *node)
 {
 	shash_node_t *current = NULL, *temp = NULL, *next = NULL;
-	char *key = node->key, *new = node->value;
-	char *cval = NULL, *ckey = NULL, *nkey = NULL;
+	char *key = node->key, *ckey = NULL, *nkey = NULL;
+	char *cval = NULL, *new = NULL;
 
 	current = ht->shead;
 	if (!current)
@@ -166,6 +166,7 @@ int update_sorted_list(shash_table_t *ht, shash_node_t *node)
 		if (strcmp(key, ckey) == 0)
 		{
 			cval = current->value;
+			new = strdup(node->value);
 			current->value = new;
 			free(cval);
 			free_node(node);
