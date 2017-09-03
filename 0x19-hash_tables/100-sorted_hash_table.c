@@ -216,15 +216,15 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * hash_table_get - Retrieves value associated with a key
+ * shash_table_get - Retrieves value associated with a key
  * @ht: The hash table
  * @key: The key to retrieve
  *
  * Return: The value or NULL
  */
-char *hash_table_get(const hash_table_t *ht, const char *key)
+char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-	hash_node_t *node = NULL;
+	shash_node_t *node = NULL;
 	unsigned long int index;
 
 	if (!ht || !key)
