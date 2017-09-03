@@ -206,8 +206,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		updated = update_value_for_key(bucket, new);
 		if (!updated)
 		{
-			cur = bucket;
-			bucket = new;
+			cur = ht->array[index];
+			ht->array[index] = new;
 			new->next = cur;
 		}
 	}
