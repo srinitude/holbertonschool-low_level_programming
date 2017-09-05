@@ -156,14 +156,17 @@ int update_sorted_list(shash_table_t *ht, shash_node_t *node)
 			ht->stail = node;
 			return (SUCCESS);
 		}
-		nkey = next->key;
-		if ((strcmp(key, ckey) > 0) && (strcmp(key, nkey) < 0))
+		if (next)
 		{
-			current->snext = node;
-			node->sprev = current;
-			node->snext = next;
-			next->sprev = node;
-			return (SUCCESS);
+			nkey = next->key;
+			if ((strcmp(key, ckey) > 0) && (strcmp(key, nkey) < 0))
+			{
+				current->snext = node;
+				node->sprev = current;
+				node->snext = next;
+				next->sprev = node;
+				return (SUCCESS);
+			}
 		}
 		if (strcmp(key, ckey) == 0)
 		{
