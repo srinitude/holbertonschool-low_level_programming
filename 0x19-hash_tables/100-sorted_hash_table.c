@@ -240,7 +240,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	node = ht->array[index];
 	while (node)
 	{
-		if (!strcmp(node->key, key))
+		if (strcmp(node->key, key) == 0)
 			return (node->value);
 		node = node->next;
 	}
