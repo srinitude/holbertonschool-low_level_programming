@@ -19,18 +19,24 @@ void back(listint_t **stop, listint_t *compare)
 			pp = previous->prev;
 			nn = compare->next;
 			compare->next = previous;
+			previous->prev = compare;
 			if (!pp)
 			{
 				*stop = compare;
 				(*stop)->prev = NULL;
 			}
 			else
+			{
 				compare->prev = pp;
-			previous->prev = compare;
-			previous->next = nn;
-			nn->prev = previous;
-			if (pp)
 				pp->next = compare;
+			}
+			if (nn)
+			{
+				previous->next = nn;
+				nn->prev = previous;
+			}
+			else
+				previous->next = NULL;
 			print_list((const listint_t *)*stop);
 		}
 		else
