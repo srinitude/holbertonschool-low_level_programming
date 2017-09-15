@@ -20,7 +20,10 @@ void back(listint_t *stop, listint_t *compare)
 			nn = compare->next;
 			compare->next = previous;
 			if (!pp)
-				stop = pp;
+			{
+				stop = compare;
+				stop->prev = NULL;
+			}
 			else
 				compare->prev = pp;
 			previous->prev = compare;
@@ -28,8 +31,6 @@ void back(listint_t *stop, listint_t *compare)
 			nn->prev = previous;
 			if (pp)
 				pp->next = compare;
-			else
-				stop->next = previous;
 			print_list((const listint_t *)stop);
 		}
 		else
