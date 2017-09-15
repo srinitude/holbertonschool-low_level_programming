@@ -7,7 +7,7 @@
  *
  * Return: None
  */
-void back(listint_t *stop, listint_t *compare)
+void back(listint_t **stop, listint_t *compare)
 {
 	listint_t *previous = NULL, *pp = NULL, *nn = NULL;
 
@@ -21,8 +21,8 @@ void back(listint_t *stop, listint_t *compare)
 			compare->next = previous;
 			if (!pp)
 			{
-				stop = compare;
-				stop->prev = NULL;
+				*stop = compare;
+				(*stop)->prev = NULL;
 			}
 			else
 				compare->prev = pp;
@@ -31,7 +31,7 @@ void back(listint_t *stop, listint_t *compare)
 			nn->prev = previous;
 			if (pp)
 				pp->next = compare;
-			print_list((const listint_t *)stop);
+			print_list((const listint_t *)*stop);
 		}
 		else
 			return;
@@ -56,7 +56,7 @@ void insertion_sort_list(listint_t **list)
 	while (current->next)
 	{
 		next = current->next;
-		back(*list, next);
+		back(list, next);
 		current = next;
 	}
 }
