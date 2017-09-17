@@ -56,6 +56,9 @@ void quick_sort_imp(int *array, int low, int hi, size_t size)
 {
 	int par;
 
+	if (!array || size == 0 || size == 1)
+		return;
+
 	if (low < hi)
 	{
 		par = partition(array, low, hi, size);
