@@ -35,7 +35,7 @@ void insertion_sort(int *arr, size_t idx, size_t g)
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t i, j, gap = 1, initial_gap;
+	size_t i, j, gap = 0, initial_gap;
 
 	if (!array || size == 0 || size == 1)
 		return;
