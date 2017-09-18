@@ -3,18 +3,18 @@
 /**
  * insertion_sort - Implementation of insertion
  * @arr: The array
- * @idx: The index
- * @s: The stopping point
+ * @idx: The index of compare
+ * @p: The index of prev
  * @g: The gap
  *
  * Return: None
  */
-void insertion_sort(int *arr, size_t idx, size_t s, size_t g)
+void insertion_sort(int *arr, size_t idx, size_t p, size_t g)
 {
 	size_t i;
 	int compare, prev, swap;
 
-	for (i = idx; i >= (s + g); i -= g)
+	for (i = idx; i > p; i -= g)
 	{
 		compare = arr[i];
 		prev = arr[i - g];
@@ -47,9 +47,9 @@ void shell_sort(int *array, size_t size)
 			initial_gap = gap;
 	}
 	gap = initial_gap;
-	for (; gap >= 1; gap = ((gap - 1) / 3))
+	for (; gap >= 1; gap /= 3)
 	{
-		for (i = 0; i < size - 1; i++)
+		for (i = 0; i < size; i++)
 		{
 			j = i + gap;
 			if (j <= (size - 1))
