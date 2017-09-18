@@ -46,7 +46,7 @@ void shell_sort(int *array, size_t size)
 			initial_gap = gap;
 	}
 	gap = initial_gap;
-	for (; gap >= 1; gap /= 3)
+	for (; gap >= 1; gap = ((gap - 1) / 3))
 	{
 		for (i = 0; i < size; i++)
 		{
