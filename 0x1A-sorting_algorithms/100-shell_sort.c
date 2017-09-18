@@ -39,10 +39,10 @@ void shell_sort(int *array, size_t size)
 
 	if (!array || size == 0 || size == 1)
 		return;
-	while (size > gap)
+	while (gap < size)
 	{
 		gap = (gap * 3) + 1;
-		if (size > gap)
+		if (gap < size)
 			initial_gap = gap;
 	}
 	gap = initial_gap;
