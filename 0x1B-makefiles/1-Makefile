@@ -1,0 +1,4 @@
+CC = gcc
+SRC = .c
+all: m.h main$(SRC) holberton$(SRC)
+	$(CC) main$(SRC) holberton$(SRC) -o holberton
