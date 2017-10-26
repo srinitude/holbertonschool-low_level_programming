@@ -1,5 +1,13 @@
 #include "binary_trees.h"
 
+/**
+ * ancestor - Find nearest ancestor
+ * @f: The first tree
+ * @s: The second tree
+ * @c: Counter
+ *
+ * Return: Pointer to nearest or NULL
+ */
 binary_tree_t *ancestor(binary_tree_t *f, binary_tree_t *s, size_t c)
 {
 	if (!f || !s)
@@ -12,8 +20,16 @@ binary_tree_t *ancestor(binary_tree_t *f, binary_tree_t *s, size_t c)
 		return (ancestor(f, s->parent, c + 1));
 }
 
+
+/**
+ * binary_trees_ancestor - Find nearest ancestor
+ * @first: The first tree
+ * @second: The second tree
+ *
+ * Return: Pointer to nearest or NULL
+ */
 binary_tree_t
-*binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+*binary_trees_ancestor(binary_tree_t *first, binary_tree_t *second)
 {
-	return (ancestor((binary_tree_t *)first, (binary_tree_t *)second, 0));
+	return (ancestor(first, second, 0));
 }
