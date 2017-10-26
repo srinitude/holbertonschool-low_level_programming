@@ -5,33 +5,21 @@
  * @f: The first tree
  * @s: The second tree
  * @c: Counter
- * @i: Index
  *
- * Return: 
+ * Return: Pointer to nearest or NULL
  */
-void ancestor(binary_tree_t *f, binary_tree_t *s, binary_tree_t **arr, size_t i)
+binary_tree_t *ancestor(binary_tree_t *f, binary_tree_t *s, size_t c)
 {
 	if (!f || !s)
-	{
-		arr[i] = NULL;
-		return;
-	}
+		return (NULL);
 	if (f == s)
-	{
-		arr[i] = f;
-		return;
-	}
-	if (i % 2)
-	{
-		arr[i] = f;
-		ancestor(f->parent, s, arr, i + 1);
-	}
+		return (f);
+	if (c % 2)
+		return (ancestor(f->parent, s, c + 1));
 	else
-	{
-		arr[i] = s;
-		ancestor(f, s->parent, arr, i + 1);
-	}
+		return (ancestor(f, s->parent, c + 1));
 }
+
 
 /**
  * binary_trees_ancestor - Find nearest ancestor
@@ -43,26 +31,5 @@ void ancestor(binary_tree_t *f, binary_tree_t *s, binary_tree_t **arr, size_t i)
 binary_tree_t
 *binary_trees_ancestor(binary_tree_t *first, binary_tree_t *second)
 {
-	size_t i = 0;
-	binary_tree_t *previous = NULL;
-	binary_tree_t **arr = NULL;
-
-	arr = malloc(sizeof(binary_tree_t *) * 100);
-	if (!arr)
-		return (NULL);
-	for (i = 0; i < 100; i++)
-		arr[i] = NULL;
-	ancestor(first, second, arr, 0);
-	for (i = 0; arr[i]; i++)
-	{
-		if (i == 0)
-			previous = arr[i];
-		else
-		{
-			previous = arr[i - 1];
-			if (previous == arr[i])
-				return (previous);
-		}
-	}
-	return (arr[i - 1]);
+	return (ancestor(first, second, 0));
 }
