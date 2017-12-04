@@ -28,9 +28,9 @@ int linear_search(int *array, size_t size, int value)
 	for (; i < size; i++)
 	{
 		current = array[i];
-		print_value_at_index((int )i, current);
+		print_value_at_index((int)i, current);
 		if (current == value)
-			return ((int )i);
+			return ((int)i);
 	}
 	return (-1);
 }
