@@ -38,7 +38,7 @@ This repository contains projects on C programming language. The projects cover:
 ## Installation
 In your terminal, git clone the directory with the following command:
 ```
-git clone https://github.com/feliciahsieh/[Github project directory]
+git clone https://github.com/srinitude/[Github project directory]
 ```
 
 Compile the files using:
@@ -76,15 +76,15 @@ Run a C program at your shell prompt normally as directed.
 19. [0x12-more_singly_linked_lists](./0x12-more_singly_linked_lists)
 20. [0x13-bit_manipulation](./0x13-bit_manipulation)
 21. [0x14-file_io](./0x14-file_io)
-22. [0x15-simple_shell](./0x15-simple_shell) ** C Shell project **
+22. [0x15-simple_shell](https://github.com/srinitude/simple_shell) ** C Shell project **
 23. [0x16-doubly_linked_lists](./0x16-doubly_linked_lists)
 24. [0x17-dynamic_libraries](./0x17-dynamic_libraries)
 25. [0x18-stacks_queues_lifo_fifo @ 2ee51b6](https://github.com/srinitude/monty) ** Reverse Polish Notation Calculator **
 26. [0x19-hash_tables](./0x19-hash_tables)
-27. [0x1A-sorting_algorithms @ 282bebb](./https://github.com/birnbera/sorting_algorithms/tree/282bebb4e0f3a094ae31466b7d6a8727408f762b) ** Sorting algorithms project **
+27. [0x1A-sorting_algorithms](./0x1A-sorting_algorithms)
 28. [0x1B-makefiles](./0x1B-makefiles)
 29. [0x1C-binary_trees](./0x1C-binary_trees)
 30. [0x1D-search_algorithms](./0x1D-search_algorithms)
 
 ## Credits
-Work is owned and maintained by Felicia Hsieh ([@feliciahsiehsw](https://twitter.com/feliciahsiehsw)). A few projects were group projects, and joint ownership will be reflected in each respective project README.md file.
+Work is owned and maintained by Kiren Srinivasan ([@srinitude](https://twitter.com/srinitude)). A few projects were group projects, and joint ownership will be reflected in each respective project README.md file.
