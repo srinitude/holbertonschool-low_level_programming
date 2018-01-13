@@ -71,7 +71,7 @@ Run a C program at your shell prompt normally as directed.
 14. [0x0D-structures_typedef](./0x0D-structures_typedef)
 15. [0x0E-function_pointers](./0x0E-function_pointers)
 16. [0x0F-variadic_functions](./0x0F-variadic_functions)
-17. [0x10-printf](./0x10-printf) ** printf project **
+17. [0x10-printf](https://github.com/srinitude/printf) ** printf project **
 18. [0x11-singly_linked_lists](./0x11-singly_linked_lists)
 19. [0x12-more_singly_linked_lists](./0x12-more_singly_linked_lists)
 20. [0x13-bit_manipulation](./0x13-bit_manipulation)
