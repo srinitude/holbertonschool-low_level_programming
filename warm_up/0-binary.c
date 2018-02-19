@@ -3,11 +3,11 @@
 /**
  * binary_search_imp - Implementation of binary search
  * @array: The array to search through
- * @val: The value to search for
+ * @value: The value to search for
  * @l: Lower bound to start printing
  * @u: Upper bound to end printing
  *
- * Return: The index of the value or -1 if the value isn't present/array is NULL
+ * Return: The index of the value or -1
  */
 int binary_search_imp(int *array, int value, size_t l, size_t u)
 {
@@ -45,11 +45,11 @@ int binary_search_imp(int *array, int value, size_t l, size_t u)
  * @size: The size of the array
  * @value: The value to search for
  *
- * Return: The index of the value or -1 if the value isn't present/array is NULL
+ * Return: The index of the value or -1
  */
 int binary_search(int *array, size_t size, int value)
 {
 	if (array == NULL)
 		return (-1);
-	return binary_search_imp(array, value, (size_t)0, size - 1);
+	return (binary_search_imp(array, value, (size_t)0, size - 1));
 }
