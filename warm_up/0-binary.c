@@ -34,7 +34,7 @@ int binary_search_imp(int *array, int value, size_t l, size_t u)
 		return ((int)mid);
 
 	if (array[mid] > value)
-		return (binary_search_imp(array, value, l, mid - 1));
+		return (binary_search_imp(array, value, l, mid));
 	else
 		return (binary_search_imp(array, value, mid + 1, u));
 }
